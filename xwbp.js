@@ -6,7 +6,7 @@ var pkg = require('./package.json');
 var XLSX = require('xlsx');
 
 var workbook;
-function readWorkbook(wb) { return XLSX.readFile('./' + workbook); }
+function readWorkbook(wb) { return XLSX.readFile(workbook); }
 
 function to_json(wb) {
     workbook = wb;
