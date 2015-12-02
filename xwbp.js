@@ -3,7 +3,7 @@
 'use strict';
 var prog = require('commander');
 var pkg = require('./package.json');
-if(typeof require !== 'undefined') XLSX = require('xlsx');
+var XLSX = require('xlsx');
 
 var workbook;
 function readWorkbook(wb) { return XLSX.readFile('./' + workbook); }
