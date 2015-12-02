@@ -1,6 +1,6 @@
 {
   "name": "xlsx-parser-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Node.js CLI for js-xlsx's XLSX / XLSM / XLSB / XLS / SpreadsheetML (Excel Spreadsheet) / ODS parsing methods",
   "main": "xwbp.js",
   "scripts": {
