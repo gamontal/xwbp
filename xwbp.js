@@ -58,9 +58,9 @@ function to_formulae(wb) {
 prog
     .usage('<options> <FILE>')
     .version(pkg.version)
-    .option('--json <file>', 'Convert to JSON format', to_json)
-    .option('--csv <file>', 'Convert to CSV format', to_csv)
-    .option('--formulae <file>', 'Convert to FORMULAE (outputs cell positions and values)', to_formulae)
+    .option('--json <file>', 'convert to JSON format', to_json)
+    .option('--csv <file>', 'convert to CSV format', to_csv)
+    .option('--formulae <file>', 'convert to FORMULAE format', to_formulae)
 
 prog.on('--help', function() {
     console.log('  Supported read formats:');
