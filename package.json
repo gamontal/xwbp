@@ -1,0 +1,23 @@
+{
+    "name": "js-xlsx-parser",
+    "version": "1.0.0",
+    "description": "A Node.js CLI for js-xlsx's XLSX / XLSM / XLSB / XLS / SpreadsheetML (Excel Spreadsheet) / ODS parsing methods",
+    "main": "xwbp.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+	  "bin": {
+		    "js-xlsx-parser": "xwbp.js"
+	  },
+    "keywords": [
+        "xlsx",
+        "excel"
+    ],
+    "author": "Gabriel Montalvo",
+    "license": "MIT",
+    "preferGlobal": true,
+    "dependencies": {
+        "commander": "^2.9.0",
+        "xlsx": "^0.8.0"
+    }
+}
