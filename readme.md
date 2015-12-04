@@ -1,4 +1,4 @@
-#xwbp
+#xwbp [![Build Status](https://travis-ci.org/gmontalvoriv/xwbp.svg)](https://travis-ci.org/gmontalvoriv/xwbp)
 
 > A Node.js CLI for parsing XLSX / XLSM / XLSB / XLS / SpreadsheetML (Excel Spreadsheet) / ODS files using SheetJS's xlsx library
 
