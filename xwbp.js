@@ -58,9 +58,9 @@ function to_formulae(wb) {
 prog
     .usage('<options> <FILE>')
     .version(pkg.version)
-    .option('--json <file>', 'convert to JSON format', to_json)
-    .option('--csv <file>', 'convert to CSV format', to_csv)
-    .option('--formulae <file>', 'convert to FORMULAE format', to_formulae);
+    .option('--json <file>', 'converts a workbook object to an array of JSON objects', to_json)
+    .option('--csv <file>', 'generates delimiter-separated-values output', to_csv)
+    .option('--formulae <file>', 'generates a list of the formulae (with value fallbacks)', to_formulae);
 
 prog.on('--help', function() {
     console.log('  Supported read formats:');

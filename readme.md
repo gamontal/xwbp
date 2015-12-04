@@ -19,9 +19,9 @@ $ xwbp --help
 
     -h, --help         output usage information
     -V, --version      output the version number
-    --json <file>      convert to JSON format
-    --csv <file>       convert to CSV format
-    --formulae <file>  convert to FORMULAE format
+    --json <file>      converts a workbook object to an array of JSON objects
+    --csv <file>       generates delimiter-separated-values output
+    --formulae <file>  generates a list of the formulae (with value fallbacks)
 
   Supported read formats:
 
