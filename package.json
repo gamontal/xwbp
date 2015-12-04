@@ -1,26 +1,26 @@
 {
-    "name": "xwbp",
-    "version": "1.0.3",
-    "description": "A Node.js CLI for js-xlsx's XLSX / XLSM / XLSB / XLS / SpreadsheetML (Excel Spreadsheet) / ODS parsing methods",
-    "main": "xwbp.js",
-    "devDependencies": {
-        "jshint": "^2.8.0"
-    },
-    "scripts": {
-        "test": "./node_modules/jshint/bin/jshint xwbp.js"
-    },
-    "bin": {
-        "xwbp": "xwbp.js"
-    },
-    "keywords": [
-        "xlsx",
-        "excel"
-    ],
-    "author": "Gabriel Montalvo",
-    "license": "MIT",
-    "preferGlobal": true,
-    "dependencies": {
-        "commander": "^2.9.0",
-        "xlsx": "^0.8.0"
-    }
+  "name": "xwbp",
+  "version": "1.0.4",
+  "description": "A Node.js CLI for js-xlsx's XLSX / XLSM / XLSB / XLS / SpreadsheetML (Excel Spreadsheet) / ODS parsing methods",
+  "main": "xwbp.js",
+  "devDependencies": {
+    "jshint": "^2.8.0"
+  },
+  "scripts": {
+    "test": "./node_modules/jshint/bin/jshint xwbp.js"
+  },
+  "bin": {
+    "xwbp": "xwbp.js"
+  },
+  "keywords": [
+    "xlsx",
+    "excel"
+  ],
+  "author": "Gabriel Montalvo",
+  "license": "MIT",
+  "preferGlobal": true,
+  "dependencies": {
+    "commander": "^2.9.0",
+    "xlsx": "^0.8.0"
+  }
 }
