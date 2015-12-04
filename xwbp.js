@@ -60,7 +60,7 @@ prog
     .version(pkg.version)
     .option('--json <file>', 'convert to JSON format', to_json)
     .option('--csv <file>', 'convert to CSV format', to_csv)
-    .option('--formulae <file>', 'convert to FORMULAE format', to_formulae)
+    .option('--formulae <file>', 'convert to FORMULAE format', to_formulae);
 
 prog.on('--help', function() {
     console.log('  Supported read formats:');
