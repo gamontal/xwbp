@@ -3,11 +3,15 @@
   "version": "1.0.6",
   "description": "A Node.js CLI for js-xlsx's XLSX / XLSM / XLSB / XLS / SpreadsheetML (Excel Spreadsheet) / ODS parsing methods",
   "main": "xwbp.js",
-  "devDependencies": {
-    "jshint": "^2.8.0"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gmontalvoriv/xwbp"
+  },
+  "bugs": {
+    "url": "https://github.com/gmontalvoriv/xwbp/issues"
   },
   "scripts": {
-    "test": "./node_modules/jshint/bin/jshint xwbp.js"
+    "test": "./node_modules/mocha/bin/mocha test.js && ./node_modules/jshint/bin/jshint ./xwbp.js"
   },
   "bin": {
     "xwbp": "xwbp.js"
@@ -22,5 +26,12 @@
   "dependencies": {
     "commander": "^2.9.0",
     "xlsx": "^0.8.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.8.0",
+    "chai": "*",
+    "mocha": "*",
+    "sinon": "*",
+    "mocha-sinon": "*"
   }
 }
