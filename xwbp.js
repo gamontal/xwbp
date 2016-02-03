@@ -17,13 +17,17 @@ module.exports = converter =  {
     var result = {};
     workbook.SheetNames.forEach(function (sheetName) {
       var roa = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
-      if(roa.length > 0) {
+      if (roa.length > 0) {
         result[sheetName] = roa;
 
-        result[sheetName].forEach(function (obj) { // makes sure numbers are properly parsed
+        result[sheetName].forEach(function (obj) {
           for (var property in obj) {
             if (!isNaN(obj[property])) {
               obj[property] = Number(obj[property].trim());
+            }
+
+            if (obj[property] === 'TRUE' || obj[property] === 'true') {
+              obj[property] = Boolean(obj[property].trim());
             }
           }
         });
@@ -31,7 +35,6 @@ module.exports = converter =  {
     });
 
     result = JSON.stringify(result, 2, 2);
-
     console.log(result);
   },
 
@@ -42,7 +45,7 @@ module.exports = converter =  {
     var result = [];
     workbook.SheetNames.forEach(function (sheetName) {
       var csv = XLSX.utils.sheet_to_csv(workbook.Sheets[sheetName]);
-      if(csv.length > 0) {
+      if (csv.length > 0) {
         result.push('SHEET: ' + sheetName);
         result.push('');
         result.push(csv);
@@ -58,7 +61,7 @@ module.exports = converter =  {
     var result = [];
     workbook.SheetNames.forEach(function (sheetName) {
       var formulae = XLSX.utils.get_formulae(workbook.Sheets[sheetName]);
-      if(formulae.length > 0) {
+      if (formulae.length > 0) {
         result.push('SHEET: ' + sheetName);
         result.push('');
         result.push(formulae.join('\n'));
