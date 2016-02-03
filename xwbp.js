@@ -19,9 +19,19 @@ module.exports = converter =  {
       var roa = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
       if(roa.length > 0) {
         result[sheetName] = roa;
+
+        result[sheetName].forEach(function (obj) { // makes sure numbers are properly parsed
+          for (var property in obj) {
+            if (!isNaN(obj[property])) {
+              obj[property] = Number(obj[property].trim());
+            }
+          }
+        });
       }
     });
+
     result = JSON.stringify(result, 2, 2);
+
     console.log(result);
   },
 
