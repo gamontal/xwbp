@@ -27,7 +27,9 @@ module.exports = converter =  {
             }
 
             if (obj[property] === 'TRUE' || obj[property] === 'true') {
-              obj[property] = Boolean(obj[property].trim());
+              obj[property] = true;
+            } else if (obj[property] === 'FALSE' || obj[property] === 'false') {
+              obj[property] = false;
             }
           }
         });
