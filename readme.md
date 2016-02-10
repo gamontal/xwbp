@@ -60,4 +60,4 @@ $ xwbp --json example.xlsx > test.json
 
 ## License
 
-[MIT](https://github.com/gmontalvoriv/xwbp/blob/master/LICENSE)
+[MIT](https://github.com/gmontalvoriv/xwbp/blob/master/LICENSE) © Gabriel Montalvo
