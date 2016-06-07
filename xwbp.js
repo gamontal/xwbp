@@ -1,13 +1,21 @@
 #!/usr/bin/env node
 
 'use strict';
-var prog = require('commander');
+var cli = require('commander');
 var pkg = require('./package.json');
 var XLSX = require('xlsx');
 var converter;
 
 var workbook;
 function readWorkbook(wb) { return XLSX.readFile(workbook); }
+
+function hasWhiteSpace(s) {
+  return /\s/g.test(s);
+}
+
+function hasUpperCase(str) {
+  return (/[A-Z]/.test(str));
+}
 
 module.exports = converter =  {
   toJson: function (wb) {
@@ -22,6 +30,9 @@ module.exports = converter =  {
 
         result[sheetName].forEach(function (obj) {
           for (var property in obj) {
+
+            var tmp;
+
             if (!isNaN(obj[property])) {
               obj[property] = Number(obj[property].trim());
             }
@@ -30,6 +41,32 @@ module.exports = converter =  {
               obj[property] = true;
             } else if (obj[property] === 'FALSE' || obj[property] === 'false') {
               obj[property] = false;
+            }
+
+            if (hasWhiteSpace(property)) {
+              tmp = property.replace(/\s/g, '_');
+
+              obj[tmp] = obj[property];
+              delete obj[property];
+
+              property = tmp;
+            }
+
+            if (property.indexOf('(') !== -1) {
+              tmp = property.substring(0, property.indexOf('('));
+
+              obj[tmp] = obj[property];
+              delete obj[property];
+
+              property = tmp;
+            }
+
+            if (hasUpperCase(property)) {
+              tmp = property.toLowerCase();
+              obj[tmp] = obj[property];
+              delete obj[property];
+
+              property = tmp;
             }
           }
         });
@@ -73,14 +110,14 @@ module.exports = converter =  {
   }
 };
 
-prog
+cli
   .usage('<options> <FILE>')
   .version(pkg.version)
   .option('--json <file>', 'converts a workbook object to an array of JSON objects', converter.toJson)
   .option('--csv <file>', 'generates delimiter-separated-values output', converter.toCsv)
   .option('--formulae <file>', 'generates a list of the formulae (with value fallbacks)', converter.toFormulae);
 
-prog.on('--help', function() {
+cli.on('--help', function() {
   console.log('  Supported read formats:');
   console.log('');
   console.log('    - Excel 2007+ XML Formats (XLSX/XLSM)');
@@ -92,4 +129,4 @@ prog.on('--help', function() {
   console.log('');
 });
 
-prog.parse(process.argv);
+cli.parse(process.argv);
