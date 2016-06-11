@@ -6,9 +6,9 @@ var xlsxFile = './temp/test.xlsx';
 
 var temp = {
   "Sheet1": [{
-    "Username": "jonsmith",
-    "FirstName": "John",
-    "LastName": "Smith"
+    "username": "jonsmith",
+    "first_name": "John",
+    "last_name": "Smith"
   }]
 };
 
