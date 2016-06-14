@@ -1,6 +1,6 @@
 {
   "name": "xwbp",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "A Node.js CLI for js-xlsx's XLSX / XLSM / XLSB / XLS / SpreadsheetML (Excel Spreadsheet) / ODS parsing methods",
   "main": "xwbp.js",
   "repository": {
