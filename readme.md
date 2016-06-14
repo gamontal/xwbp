@@ -43,13 +43,13 @@ $ xwbp --json example.xlsx > test.json
 {
   "Sheet1": [
     {
-      "ID": "1",
+      "id": "1",
       "first_name": "John",
       "last_name": "Doe",
       "stud_num": "R00123456"
     },
     {
-      "ID": "2",
+      "id": "2",
       "first_name": "Sarah",
       "last_name": "Smith",
       "stud_num": "R00654321"
