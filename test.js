@@ -7,8 +7,8 @@ var xlsxFile = './temp/test.xlsx';
 var temp = {
   "Sheet1": [{
     "username": "jonsmith",
-    "first_name": "John",
-    "last_name": "Smith"
+    "password": "jon1234",
+    "email": null
   }]
 };
 
@@ -25,6 +25,5 @@ describe('xwbp', function() {
     expect(console.log.calledOnce).to.be.true;
     expect(console.log.calledWith(temp)).to.be.true;
   });
-
 });
 

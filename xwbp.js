@@ -43,22 +43,8 @@ module.exports = converter =  {
               obj[property] = false;
             }
 
-            if (hasWhiteSpace(property)) {
-              tmp = property.replace(/\s/g, '_');
-
-              obj[tmp] = obj[property];
-              delete obj[property];
-
-              property = tmp;
-            }
-
-            if (property.indexOf('(') !== -1) {
-              tmp = property.substring(0, property.indexOf('('));
-
-              obj[tmp] = obj[property];
-              delete obj[property];
-
-              property = tmp;
+            if (obj[property] === 'NULL') {
+              obj[property] = null;
             }
 
             if (hasUpperCase(property)) {
@@ -130,3 +116,4 @@ cli.on('--help', function() {
 });
 
 cli.parse(process.argv);
+
